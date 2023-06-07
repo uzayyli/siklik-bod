@@ -13,9 +13,8 @@ router.get('/connect',(req,res,next)=>{
 });
 
 router.get('/disconnect',(req,res,next)=>{
-	disconnect(()=>{
-		res.redirect('/discord');
-	});
+	res.render('generic_io',{data:"olmaz"});
+	//disconnect(()=>{res.redirect('/discord');});
 });
 
 module.exports=router;

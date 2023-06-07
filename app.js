@@ -2,7 +2,7 @@ const express=require('express'),
 app=express(),
 ejs=require('ejs');
 
-require('dotenv').config();
+if(!process.env.PORT){require('dotenv').config();}
 
 global._platform = process.env._platform || "local";
 
