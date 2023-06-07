@@ -1,0 +1,11 @@
+<%- include('partials/head') %>
+<body>
+	<%- include('partials/nav') %>
+	<main>
+		<h1>Discord</h1>
+		<% if( locals.warning ){ %><p style="color:yellow"><%= warning %></p><% } %>
+		<p>Bot is <%= (isOn?"on":"off")+"line" %> for <%= lastEvtTime %></p>
+		<a href="/discord/<%= href %>"><%= href %></a>
+	</main>
+</body>
+</html>

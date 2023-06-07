@@ -1,0 +1,15 @@
+<%- include('partials/head') %>
+<body>
+	<%- include('partials/nav') %>
+	<script src="/ping_measure.js"></script>
+	<main>
+		<h1>Ping tests:</h1>
+		<section id="ping-tests">
+			<button id="btn_testPing_10" data-num="10">Test 10</button>
+			<button id="btn_testPing_100" data-num="100">Test 100</button>
+			<button id="btn_testPing_1000" data-num="1000">Test 1k</button>
+			<div id="pingTests" data-posturl="<%= locals.posturl %>"></div>
+		</section>
+	</main>
+</body>
+</html>

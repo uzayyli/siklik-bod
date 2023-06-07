@@ -1,0 +1,9 @@
+<%- include('partials/head') %>
+<body>
+	<%- include('partials/nav') %>
+	<main>
+		<h1><%= locals.h1||"Data" %></h1>
+		<textarea wrap="off" placeholder="Data / Output"><%= !locals.data?"":((typeof data)==="string"?data:JSON.stringify(data,null,2)) %></textarea>
+	</main>
+</body>
+</html>

@@ -1,0 +1,14 @@
+<nav>
+	<span id="nav-brand"><a  href="/">Sikliklik</a></span>
+	<span id="nav-links">
+		<a href="/tools">Tools</a>
+		<a href="/discord">Discord</a>
+	</span>
+	<span id="nav-user">
+		<% if(locals.user){ %>
+		<span><a href="/logout">Logout</a><a> (<%= user.username %>)</a></span>
+		<% }else{ %>
+		<a href="/login">Login</a>
+		<% } %>
+	</span>
+</nav>

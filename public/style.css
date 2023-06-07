@@ -1,0 +1,83 @@
+html{width:100%;}
+body{
+	background: url('/bg.png');
+	color: #fff;
+	margin: 0;
+}
+
+nav{
+	display: flex;
+	flex-wrap: wrap;
+}
+nav>span{
+	display:inline-block;
+}
+nav>span>*{
+	display:inline-block;
+	padding:1em 2em;
+	text-align: center;
+}
+nav>#nav-links{
+	flex-grow: 1;
+	text-align: center;
+}
+a[href]{color:#fff}
+a[href]:hover{color:#92FF0E}
+
+main{
+	display:flex;
+	flex-flow: column wrap;
+	padding:2em;
+}
+
+section#generic_io{
+	padding:2em;
+}
+form#gio-form{
+	display:flex;
+	justify-content: space-evenly;
+	align-items: center;
+}
+input#gio-submit{
+	padding: 0.5em;
+	margin: 0.5em;
+	cursor: pointer;
+}
+span#gio-left, span#gio-right{
+	flex-grow: 1;
+}
+textarea{
+	height:25em;
+	width:100%;
+	box-sizing: border-box;
+	background-color:#333;
+	color:#fff;
+}
+input{
+	background-color:#333;
+	color:#fff;
+	padding:5px;
+	margin:0.2em;
+	border-radius:5px;
+}
+li{
+	padding:0.25em;
+}
+
+section#connEvents{
+	max-width: 200px;
+	display: flex;
+	flex-flow: column wrap;
+}
+section#connEvents button#clearEvents{
+	padding:0.5em;
+}
+section#connEvents tr.on{
+	color: #66ff66;
+}
+section#connEvents tr.off{
+	color: #ff6666;
+}
+td{
+	padding:10px;
+}

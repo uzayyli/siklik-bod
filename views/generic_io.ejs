@@ -1,0 +1,23 @@
+<%- include('partials/head') %>
+<body>
+	<%- include('partials/nav') %>
+	<section id="generic_io">
+	<% if(locals.h1){ %><h1><%= h1 %></h1><% } %>
+		<form id="gio-form" action="<%= locals.formTarget?('/'+formTarget):'' %>" method="post">
+			<% if(locals.formTarget || !locals.disableInput){ %>
+			<span id="gio-left">
+				<h3><%= locals.data?"Again?":"Input"%></h3>
+				<textarea wrap="off" id="input" name="input" placeholder="Input"><%= locals.originalInput || ""%></textarea>
+			</span>
+			<span id="gio-mid">
+				<input id="gio-submit" type="submit" value="Submit">
+			</span>
+			<% } %>
+			<span id="gio-right">
+				<h3><%= locals.h3 || "Data:" %></h3>
+				<textarea wrap="off" placeholder="Data / Output"><%= !locals.data?"":((typeof data)==="string"?data:JSON.stringify(data,null,2)) %></textarea>
+			</span>
+		</form>
+	</section>
+</body>
+</html>
