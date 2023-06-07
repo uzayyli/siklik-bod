@@ -2,9 +2,7 @@ const express=require('express'),
 app=express(),
 ejs=require('ejs');
 
-if(!process.env.PORT){require('dotenv').config();}
-
-global._platform = process.env._platform || "local";
+if(process.env.platform!=="remote"){require('dotenv').config();}
 
 app.use(express.static(process.cwd()+'/public'));
 app.set('views',process.cwd()+'/views');
@@ -14,7 +12,7 @@ app.use(express.urlencoded({extended:true}));
 
 // routes
 require(process.cwd()+'/lib/discordBot.js').connect();
-app.use((req,res,next)=>{Object.assign(res.locals,{title:req.originalUrl.split("?")[0],_platform:global._platform});return next();});
+app.use((req,res,next)=>{Object.assign(res.locals,{title:req.originalUrl.split("?")[0],_platform:process.env.platform});return next();});
 app.use('/', require(process.cwd()+'/routes/main.js'));
 app.use('/discord', require(process.cwd()+'/routes/discord.js'));
 app.use('/tools', require(process.cwd()+'/routes/tools.js'));
