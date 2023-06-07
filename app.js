@@ -7,7 +7,7 @@ if(process.env.platform!=="remote"){require('dotenv').config();}
 app.use(express.static(process.cwd()+'/public'));
 app.set('views',process.cwd()+'/views');
 app.set('view engine','ejs');
-app.use('/favicon.ico',express.static(process.cwd()+'public/favicon.ico'));
+//app.use('/favicon.ico',express.static(process.cwd()+'public/favicon.ico'));
 app.use(express.urlencoded({extended:true}));
 
 // routes
