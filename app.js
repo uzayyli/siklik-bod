@@ -8,7 +8,8 @@ app.use(express.static(process.cwd()+'/public'));
 app.set('views',process.cwd()+'/views');
 app.set('view engine','ejs');
 //app.use('/favicon.ico',express.static(process.cwd()+'public/favicon.ico'));
-app.use(express.urlencoded({extended:true}));
+//app.use(express.urlencoded({extended:true}));
+app.use(express.urlencoded({ limit: '50mb', extended: true, parameterLimit: 50000 })); // for minify payload
 
 // routes
 require(process.cwd()+'/lib/discordBot.js').connect();
